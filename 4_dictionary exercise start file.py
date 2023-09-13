@@ -1,16 +1,15 @@
 # This program uses a dictionary as a deck of cards.
-
+import random
 def main():
     # Create a deck of cards.
-   
+    deck = create_deck()
 
     # Get the number of cards to deal.
     num_cards = int(input('How many cards should I deal? '))
 
 
-
     # Deal the cards.
-
+    deal_cards(deck,num_cards)
 
     
     
@@ -43,7 +42,7 @@ def create_deck():
             '7 of Diamonds':7, '8 of Diamonds':8, '9 of Diamonds':9,
             '10 of Diamonds':10, 'Jack of Diamonds':10,
             'Queen of Diamonds':10, 'King of Diamonds': 10}
-
+    return(deck)
     # Return the deck.
 
 
@@ -54,24 +53,40 @@ def create_deck():
 
 def deal_cards(deck, number):
     # Initialize an accumulator for the hand value.
-
-    
+    accumulator=0
+    cards_dealt=[]
     
     # DATA VALIDATION
     # Make sure the number of cards to deal is not
     # greater than the number of cards in the deck (52).
-
+    if number <52:
+       print('shuffling')
+    else:
+       print('Error: There are only 52 cards in a deck, please input a amount of cards less than 53')
+       number=int(input())
+       while number <52:
+           print('Error: There are only 52 cards in a deck, please input a amount of cards less than 53')
+           number=int(input())
     
     
 
     # Deal the cards and accumulate their values.
-    
+    list_of_cards=list(deck)
+    for i in range(number):
+        random_card=random.choice(list_of_cards)
+        accumulator+=deck[random_card]
+        print(random_card)
+        list_of_cards.remove(random_card)
+        del deck[random_card]
+        #cards_dealt+=random_card
+
 
 
     
 
     # Display the value of the hand.
-
+    print("your hand's value is", accumulator)
+    #print("you drew:", cards_dealt)
     
     
 
