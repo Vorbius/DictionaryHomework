@@ -81,7 +81,6 @@ def deal_cards(deck, number):
         #cards_dealt+=random_card
 
 
-
     
 
     # Display the value of the hand.

@@ -12,7 +12,7 @@ sampleDict = {
       }
    }
 }
-
+ 
 print(sampleDict['class']['student']['marks']['history'])
 #student=sampleDict["class"]
 #name=student["name"]

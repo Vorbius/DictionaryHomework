@@ -206,4 +206,21 @@ ProduceDictionary={
         'total': 21.87
     }
 }
+for produce in ProduceDictionary['Potatoes']:
+    if ProduceDictionary['Potatoes']['total'] == round(ProduceDictionary['Potatoes']['cost']*ProduceDictionary['Potatoes']['amt_sold'],2):
+        print('this one is fine')
+    else:
+        print('error dectected')
 
+#professor's code
+for produce in ProduceDictionary:
+    cost = float(ProduceDictionary[produce]['cost'])
+    amt_sold = float(ProduceDictionary[produce]['amt_sold'])
+    stated_total = float(ProduceDictionary[produce]['total'])
+    calc_total = round(cost *amt_sold,2)
+    if stated_total != calc_total:
+        print(f"produce name: {produce}")
+        print(f"Calculated Total: ${calc_total:.2f}")
+        print(f"Stated Toal: ${stated_total:.2f}")
+        print()
+        print()
